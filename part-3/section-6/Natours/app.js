@@ -23,7 +23,7 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-// ROUTES
+// ROUTES - Tours
 // GET ALL TOURS
 const getAllTours = (req, res) => {
   console.log(req.requestTime);
@@ -121,6 +121,47 @@ const deleteASpecificTour = (req, res) => {
   });
 };
 
+// ROUTES - USERS
+// Get all users
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+// Get a specific user
+const getASpecificUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+// Create a new user
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+// Update a specific user
+const updateASpecificUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
+// Delete a specific user
+const deleteASpecificUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined!',
+  });
+};
+
 // ROUTE HANDLERS
 // app.get('/api/v1/tours', getAllTours); // GET ALL TOURS
 // app.get('/api/v1/tours/:id', getSpecificTour); // GET A SPECIFIC TOUR
@@ -129,11 +170,20 @@ const deleteASpecificTour = (req, res) => {
 // app.delete('/api/v1/tours/:id', deleteASpecificTour); // DELETE A SPECIFIC TOUR
 
 app.route('/api/v1/tours').get(getAllTours).post(createANewTour);
+
 app
   .route('/api/v1/tours/:id')
   .get(getSpecificTour)
   .patch(updateASpecificTour)
   .delete(deleteASpecificTour);
+
+app.route('/api/v1/users').get(getAllUsers).post(createUser);
+
+app
+  .route('/api/v1/users/:id')
+  .get(getASpecificUser)
+  .patch(updateASpecificUser)
+  .delete(deleteASpecificUser);
 
 // START THE SERVER
 const port = 3000;
