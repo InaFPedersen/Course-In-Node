@@ -72,7 +72,7 @@ exports.getAllTours = async (req, res) => {
       if (skip >= numTours) throw new Error('This page does not exist')
     }
 
-    
+    See apiFeatures.js - for new refactored implementation of these
 
     */
 
