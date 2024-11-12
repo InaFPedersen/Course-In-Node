@@ -18,10 +18,10 @@ exports.getAllTours = async (req, res) => {
     const excludeFields = ['page', 'sort', 'limit', 'fields'];
     excludeFields.forEach((el) => delete queryObj[el]);
 
-    // 2) Advanced filtering
+    // 1.2) Advanced filtering
     const queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-    console.log(JSON.parse(queryStr));
+    // console.log(JSON.parse(queryStr));
 
     const query = Tour.find(JSON.parse(queryStr));
 
@@ -37,6 +37,17 @@ exports.getAllTours = async (req, res) => {
 
     // EXECUTE QUERY
     //const tours = await query
+
+    // 2) SORTING
+    if(req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      // console.log(sortBy)
+      // query = query.sort(req.query.sort);
+      query = query.sort(sortBy);
+      // sort('price ratingsAverage')
+    } else {
+      query = query.sort('-createdAt'); 
+    }
 
     */
 
