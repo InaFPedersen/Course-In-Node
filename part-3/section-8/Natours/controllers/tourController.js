@@ -1,6 +1,7 @@
 const Tour = require('./../models/tourModel');
 const APIFeatures = require('./../utils/apiFeatures');
 
+// ALIASING
 exports.aliasTopTours = (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = '-ratingsAverage,price';
@@ -70,6 +71,8 @@ exports.getAllTours = async (req, res) => {
 
       if (skip >= numTours) throw new Error('This page does not exist')
     }
+
+    
 
     */
 
