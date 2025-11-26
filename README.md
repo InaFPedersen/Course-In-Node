@@ -2,7 +2,7 @@
 Node.js, Express, MongoDB &amp; More: The Complete Bootcamp Master Node by building a real-world RESTful API and web app (with authentication, Node.js security, payments &amp;amp; more)
 
 ## Original
-The original course by Jonas Schmedtmann can be found [HERE](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/?couponCode=KEEPLEARNING)
+The original course by Jonas Schmedtmann can be found [HERE](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/)
 
 ## Learning outcome
 - Master the entire modern back-end stack: Node, Express, MongoDB and Mongoose (MongoDB JS driver)
